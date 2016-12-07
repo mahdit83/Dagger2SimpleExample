@@ -15,7 +15,7 @@ public interface MotorComponent {
 //    Computer getComputer();
 //    WaterPump getWaterPump();
 
-    void inject(MainActivity activty);
+    void  inject(MainActivity activty);
 //    void inject(Motor moto);
 
 

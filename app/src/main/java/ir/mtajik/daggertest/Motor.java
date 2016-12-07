@@ -1,5 +1,7 @@
 package ir.mtajik.daggertest;
 
+import javax.inject.Inject;
+
 public class Motor {
 
     //    @Inject
@@ -8,13 +10,15 @@ public class Motor {
     //    @Inject
 //    Radiator radiator;
 
-    Computer computer;
-    Radiator radiator;
-    String name;
+    private Computer computer;
+    private Radiator radiator;
+    private String name;
 
-//    public Motor(String name) {
-//        this.name = name;
-//    }
+/*
+public Motor(String name) {
+this.name = name;
+}
+*/
 
     public Motor(String name, Computer computer ,Radiator radiator) {
         this.name = name;

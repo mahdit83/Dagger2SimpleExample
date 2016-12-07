@@ -10,7 +10,7 @@ import javax.inject.Named;
 public class MainActivity extends AppCompatActivity {
 
     @Inject
-//    @Named("Lambo")
+    @Named("Lambo")
     public Motor motor;
 
     @Override
@@ -47,8 +47,6 @@ public class MainActivity extends AppCompatActivity {
         DaggerMotorComponent.builder().motorModule(new MotorModule
                 (this, "Computer name",12, "radiator name")).build().inject(this);
 
-//        component.inject(this);
-//        component.inject(motor);
     }
 
 }
