@@ -9,6 +9,7 @@ import javax.inject.Named;
 
 public class MainActivity extends AppCompatActivity {
 
+    //for testing named injection
     @Inject
     @Named("Lambo")
     public Motor motor;

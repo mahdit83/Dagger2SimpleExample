@@ -11,12 +11,6 @@ import dagger.Component;
 @Component(modules = {MotorModule.class})
 public interface MotorComponent {
 
-//    Motor getMotor();
-//    Computer getComputer();
-//    WaterPump getWaterPump();
-
     void  inject(MainActivity activty);
-//    void inject(Motor moto);
-
 
 }
