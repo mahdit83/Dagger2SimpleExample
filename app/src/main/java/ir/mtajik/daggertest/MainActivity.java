@@ -11,13 +11,31 @@ public class MainActivity extends AppCompatActivity {
 
     //for testing named injection
 
+    @Inject
+    NetworkClass networkClass;
+
+    @Inject
+    Database database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        initialize();
+        webRequest();
 
+    }
+
+    private void webRequest() {
+
+        networkClass.request("https://google.com");
+        database.saveToDB();
+    }
+
+    private void initialize() {
+
+        ((DaggerTestApplication)getApplicationContext()).getActivityComponent().inject(this);
     }
 
 
