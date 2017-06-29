@@ -2,17 +2,44 @@ package ir.mtajik.daggertest;
 
 import android.app.Application;
 
+import javax.inject.Inject;
+
 import ir.mtajik.daggertest.dagger.ActivityComponent;
 import ir.mtajik.daggertest.dagger.ApplicationComponent;
+import ir.mtajik.daggertest.dagger.ApplicationModule;
+import ir.mtajik.daggertest.dagger.DaggerActivityComponent;
+import ir.mtajik.daggertest.dagger.DaggerApplicationComponent;
+import ir.mtajik.daggertest.dagger.ServiceModule;
+import ir.mtajik.daggertest.dagger.UserModule;
 
 public class DaggerTestApplication extends Application {
 
+    @Inject
+    Database database;
     private ApplicationComponent appComponent;
     private ActivityComponent activityComponent;
 
     @Override
     public void onCreate() {
         super.onCreate();
+
+        wireUpDI();
+        initializeDatabase();
+
+    }
+
+    private void initializeDatabase() {
+        database.initialize();
+    }
+
+    private void wireUpDI() {
+        appComponent = DaggerApplicationComponent.builder().applicationModule(new
+                ApplicationModule(this)).serviceModule(new ServiceModule()).userModule(new
+                UserModule()).build();
+
+        activityComponent = DaggerActivityComponent.builder().applicationComponent(appComponent).build();
+
+        appComponent.inject(this);
 
     }
 

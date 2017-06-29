@@ -13,5 +13,4 @@ public interface ActivityComponent {
 
     void inject(Database database);
 
-    void inject(NetworkClass networkClass);
 }
