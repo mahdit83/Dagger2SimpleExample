@@ -28,5 +28,4 @@ public interface ApplicationComponent {
     Context getContext();
 
 
-
 }
