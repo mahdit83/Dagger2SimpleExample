@@ -2,10 +2,10 @@ package ir.mtajik.daggertest;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
 
 import javax.inject.Inject;
-import javax.inject.Named;
+
+import ir.mtajik.daggertest.dagger.ServiceModule;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void initialize() {
 
-        ((DaggerTestApplication)getApplicationContext()).getActivityComponent().inject(this);
+        ((DaggerTestApplication) getApplicationContext()).getAppComponent()
+                .providesActivityComponent(new ServiceModule()).inject(this);
+
     }
-
-
 }

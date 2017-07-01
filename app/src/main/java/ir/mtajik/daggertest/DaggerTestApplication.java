@@ -7,10 +7,8 @@ import javax.inject.Inject;
 import ir.mtajik.daggertest.dagger.ActivityComponent;
 import ir.mtajik.daggertest.dagger.ApplicationComponent;
 import ir.mtajik.daggertest.dagger.ApplicationModule;
-import ir.mtajik.daggertest.dagger.DaggerActivityComponent;
 import ir.mtajik.daggertest.dagger.DaggerApplicationComponent;
 import ir.mtajik.daggertest.dagger.DatabaseModule;
-import ir.mtajik.daggertest.dagger.ServiceModule;
 import ir.mtajik.daggertest.dagger.UserModule;
 
 public class DaggerTestApplication extends Application {
@@ -38,9 +36,12 @@ public class DaggerTestApplication extends Application {
                 ApplicationModule(this)).userModule(new
                 UserModule()).databaseModule(new DatabaseModule()).build();
 
-        activityComponent = DaggerActivityComponent.builder().applicationComponent(appComponent).serviceModule(new ServiceModule())
-                .build();
-
+//        DaggerApplicationComponent.builder().
+//
+//        activityComponent = DaggerApplicationComponent.builder().(appComponent)
+//                .serviceModule(new ServiceModule())
+//                .build();
+//
         appComponent.inject(this);
 
     }

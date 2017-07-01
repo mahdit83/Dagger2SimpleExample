@@ -1,5 +1,6 @@
 package ir.mtajik.daggertest.dagger;
 
+import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 
@@ -19,13 +20,15 @@ public interface ApplicationComponent {
 
     // Exported for child-components.
 
-    User provideUser();
+//    Context getContext();
+//
+//    User provideUser();
+//
+//    Database proDatabase();
 
-    Database proDatabase();
 
-    Context getContext();
+    //subcompnent
 
-    Application getApplication();
-
+    ActivityComponent providesActivityComponent(ServiceModule service);
 
 }

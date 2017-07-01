@@ -9,7 +9,7 @@ import ir.mtajik.daggertest.User;
 @Module
 public class ServiceModule {
 
-    @ActivityScope
+    @MahdiScope
     @Provides
     NetworkClass providesNetworkClass(User user) {
         return new NetworkClass(user);
