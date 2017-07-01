@@ -9,8 +9,6 @@ import ir.mtajik.daggertest.dagger.ServiceModule;
 
 public class MainActivity extends AppCompatActivity {
 
-    //for testing named injection
-
     @Inject
     NetworkClass networkClass;
 
