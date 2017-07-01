@@ -27,7 +27,6 @@ public interface ApplicationComponent {
 
     Context getContext();
 
-    Application getApplication();
 
 
 }
