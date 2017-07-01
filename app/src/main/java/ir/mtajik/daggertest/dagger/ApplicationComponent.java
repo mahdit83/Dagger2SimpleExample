@@ -16,16 +16,12 @@ public interface ApplicationComponent {
 
     void inject(DaggerTestApplication application);
 
-
     // Exported for child-components.
+
+    Context getContext();
 
     User provideUser();
 
     Database provideDatabase();
-
-    Context getContext();
-
-    Application getApplication();
-
 
 }
