@@ -13,11 +13,9 @@ public class Database {
     User user;
     private Context context;
 
+    @Inject
     public Database(Context context) {
         this.context = context;
-
-        //this line added for using field injection (User)
-        ((DaggerTestApplication)context.getApplicationContext()).getAppComponent().inject(this);
 
     }
 

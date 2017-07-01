@@ -11,7 +11,7 @@ import ir.mtajik.daggertest.Database;
 import ir.mtajik.daggertest.User;
 
 @Singleton
-@Component(modules = {ApplicationModule.class, DatabaseModule.class,UserModule.class})
+@Component(modules = {ApplicationModule.class,UserModule.class})
 public interface ApplicationComponent {
 
     void inject(DaggerTestApplication application);
@@ -22,8 +22,6 @@ public interface ApplicationComponent {
     User provideUser();
 
     Database provideDatabase();
-
-    void inject(Database database);
 
     Context getContext();
 
