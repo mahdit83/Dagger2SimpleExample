@@ -21,7 +21,7 @@ public interface ApplicationComponent {
 //    Database proDatabase();
 
 
-    //sub compnent
+    //sub component
 
     ActivityComponent providesActivityComponent(ServiceModule service);
 
