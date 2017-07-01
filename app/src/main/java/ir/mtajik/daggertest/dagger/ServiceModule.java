@@ -1,20 +1,17 @@
 package ir.mtajik.daggertest.dagger;
 
-import android.content.Context;
-
-import javax.inject.Singleton;
-
 import dagger.Module;
 import dagger.Provides;
 import ir.mtajik.daggertest.NetworkClass;
+import ir.mtajik.daggertest.User;
 
 
 @Module
 public class ServiceModule {
 
-    @Singleton
+    @ActivityScope
     @Provides
-    NetworkClass providesNetworkClass(Context context){
-        return new NetworkClass(context);
+    NetworkClass providesNetworkClass(User user) {
+        return new NetworkClass(user);
     }
 }
