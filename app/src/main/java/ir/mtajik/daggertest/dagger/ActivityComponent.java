@@ -1,6 +1,5 @@
 package ir.mtajik.daggertest.dagger;
 
-import dagger.Component;
 import dagger.Subcomponent;
 import ir.mtajik.daggertest.MainActivity;
 

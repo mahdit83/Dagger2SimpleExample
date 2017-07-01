@@ -36,6 +36,8 @@ public class DaggerTestApplication extends Application {
                 ApplicationModule(this)).userModule(new
                 UserModule()).databaseModule(new DatabaseModule()).build();
 
+        // there is no need for create sub component methods, sub-component can get from main component ( check MainActivity)
+
 //        DaggerApplicationComponent.builder().
 //
 //        activityComponent = DaggerApplicationComponent.builder().(appComponent)
