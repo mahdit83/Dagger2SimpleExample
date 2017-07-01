@@ -1,7 +1,7 @@
 # Dagger2SimpleExample
 A Simple Example for better Understanding of Dependency Injection with Dagger2
 
-check branch lesson1 for beginers.
+check branch lesson1 for beginners.
 
 barnch lesson2, 
 lesson2-type2, 
