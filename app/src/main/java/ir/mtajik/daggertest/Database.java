@@ -8,23 +8,25 @@ import javax.inject.Inject;
 public class Database {
 
     private static final String TAG = "mahditajik.ir";
+
+    @Inject
+    User user;
     private Context context;
 
-    public Database(Context context, User user) {
+    public Database(Context context) {
         this.context = context;
-        this.user = user;
+
+        //this line added for using field injection (User)
+        ((DaggerTestApplication)context.getApplicationContext()).getAppComponent().inject(this);
 
     }
 
-//    @Inject
-    User user;
-
-    public void initialize(){
-        Log.i(TAG, "initialize with context: "+context.toString());
+    public void initialize() {
+        Log.i(TAG, "initialize with context: " + context.toString());
 
     }
 
-    public void saveToDB(){
-        Log.i(TAG, "saveToDB: "+user.toString());
+    public void saveToDB() {
+        Log.i(TAG, "saveToDB: " + user.toString());
     }
 }

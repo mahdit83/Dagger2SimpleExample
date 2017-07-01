@@ -21,7 +21,9 @@ public interface ApplicationComponent {
 
     User provideUser();
 
-    Database proDatabase();
+    Database provideDatabase();
+
+    void inject(Database database);
 
     Context getContext();
 
