@@ -9,6 +9,7 @@ import ir.mtajik.daggertest.dagger.ApplicationComponent;
 import ir.mtajik.daggertest.dagger.ApplicationModule;
 import ir.mtajik.daggertest.dagger.DaggerActivityComponent;
 import ir.mtajik.daggertest.dagger.DaggerApplicationComponent;
+import ir.mtajik.daggertest.dagger.DatabaseModule;
 import ir.mtajik.daggertest.dagger.ServiceModule;
 import ir.mtajik.daggertest.dagger.UserModule;
 
@@ -34,10 +35,11 @@ public class DaggerTestApplication extends Application {
 
     private void wireUpDI() {
         appComponent = DaggerApplicationComponent.builder().applicationModule(new
-                ApplicationModule(this)).serviceModule(new ServiceModule()).userModule(new
-                UserModule()).build();
+                ApplicationModule(this)).userModule(new
+                UserModule()).databaseModule(new DatabaseModule()).build();
 
-        activityComponent = DaggerActivityComponent.builder().applicationComponent(appComponent).build();
+        activityComponent = DaggerActivityComponent.builder().applicationComponent(appComponent).serviceModule(new ServiceModule())
+                .build();
 
         appComponent.inject(this);
 

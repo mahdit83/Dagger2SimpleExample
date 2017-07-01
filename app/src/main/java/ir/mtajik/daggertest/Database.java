@@ -10,15 +10,13 @@ public class Database {
     private static final String TAG = "mahditajik.ir";
     private Context context;
 
-    @Inject
     public Database(Context context, User user) {
         this.context = context;
         this.user = user;
 
-        ((DaggerTestApplication)context.getApplicationContext()).getActivityComponent().inject(this);
     }
 
-    @Inject
+//    @Inject
     User user;
 
     public void initialize(){
