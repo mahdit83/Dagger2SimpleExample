@@ -22,6 +22,7 @@ public interface ApplicationComponent {
 
     User provideUser();
 
-    Database provideDatabase();
+    //because it had Constructor injected and do not need for Module or exporter
+//    Database provideDatabase();
 
 }
